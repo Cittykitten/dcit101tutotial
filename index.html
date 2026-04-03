@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>TEEA</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts + Font Awesome 6 + GSAP + fav-icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" 
+    rel="stylesheet">
+    <link rel="icon" href="images/tegah_headshot.jpeg" 
+    type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+<div class="kebab-nav" id="kebabMenu">
+    <div class="kebab-icon" id="kebabToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu-dropdown">
+        <a href="#home"><i class="fas fa-user-astronaut"></i> Home</a>
+        <a href="#bio"><i class="fas fa-book-open"></i> Bio</a>
+        <a href="#hobbies"><i class="fas fa-palette"></i> Hobbies</a>
+        <a href="#contactInfo"><i class="fas fa-address-card"></i> Connect</a>
+        <a href="#messageForm"><i class="fas fa-paper-plane"></i> Message</a>
+    </div>
+</div>
+
+<div class="container" id="home">
+    <!-- Profile Header -->
+    <div class="profile-header">
+        <div class="img-wrapper">
+            <img class="profile-img" src="images/tegah_headshot.jpeg" alt="Profile image of Tegah Emmanuella Esinam" >
+            <!-- Include onerror to the image if there's time -->
+        </div>
+        <div class="intro-text">
+            <h1>Emmanuella Esinam Tegah</h1>
+            <div class="tagline">Digital Presence Architect</div>
+            <p style="margin-top: 1rem; max-width: 500px;">Creative coder and minimalist explorer</p>
+        </div>
+    </div>
+
+    <!-- Bio section -->
+    <div class="bio-card" id="bio">
+        <h2><i class="fas fa-feather-alt" style="margin-right: 12px;"></i> About me</h2>
+        <p class="bio-text">I'm Emmanuella Esinam Tegah a Software Engineer at the University of Ghana. 
+            Over the past years, I've crafted digital spaces that feel immersive yet minimal. My approach
+             merges design thinking with precise motion.
+             Beyond code, I'm a synthwave producer and board-games enthusiast, always chasing the
+             perfect balance between logic and art.</p>
+    </div>
+
+    <!-- Hobbies -->
+    <div class="hobbies-section" id="hobbies">
+        <h2><i class="fas fa-crown"></i> Hobbies</h2>
+        <ul class="hobby-list">
+            <li><i class="fas fa-code"></i> creative coding</li>
+            <li><i class="fas fa-chess-queen"></i> board games</li>
+            <li><i class="fas fa-headphones"></i> synthwave / ambient</li>
+            <li><i class="fas fa-camera"></i> photography</li>
+            <li><i class="fas fa-futbol"></i> Sports</li>
+            <!-- <li><i class="fas fa-robot"></i> AI experiments</li> -->
+        </ul>
+    </div>
+
+    <!-- Contact info & social links (GitHub, LinkedIn, Discord, TikTok, Instagram, X and more) -->
+    <div class="contact-grid" id="contactInfo">
+        <div class="contact-details">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fas fa-id-card"></i> direct contact</h2>
+            <div class="contact-item"><i class="fas fa-envelope"></i><span>tegahtiana14@gmail.com</span></div>
+            <div class="contact-item"><i class="fas fa-phone-alt"></i><span>+(233) 246 229 036</span></div>
+            <div class="contact-item"><i class="fab fa-discord"></i><span>tegah_tiana</span></div>
+        </div>
+
+        <!-- SOCIAL MEDIA LINKS (github, linkedin, discord, tiktok, instagram, X, plus extra) -->
+        <div class="social-links-section">
+            <h3><i class="fas fa-hashtag"></i> digital footprint</h3>
+            <div class="social-icons-grid">
+                <a href="https://github.com/Cittykitten" target="_blank" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/esinam-tegah/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://discord.com/channels/@me" target="_blank" class="discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://www.tiktok.com/@cittykitten" target="_blank" class="tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/tegah_tiana/" target="_blank" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/Tegah_Tiana" target="_blank" class="xx" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/@Cittykat000" target="_blank" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <!-- <a href="https://twitch.tv/cittykitten" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a> -->
+            </div>
+            <p style="font-size: 0.75rem; margin-top: 1rem; color:#7a7e8a;">find me everywhere — let's connect</p>
+        </div>
+    </div>
+
+    <!-- Contact Form: email + message section -->
+    <div class="form-section" id="messageForm">
+        <h2><i class="fas fa-envelope-open-text"></i> send a message</h2>
+        <form class="contact-form" id="profileContactForm">
+            <div class="form-group">
+                <label><i class="far fa-envelope"></i> Your email</label>
+                <input type="email" id="userEmail" placeholder="hello@domain.com" required>
+            </div>
+            <div class="form-group">
+                <label><i class="far fa-comment-dots"></i> Message</label>
+                <textarea id="userMessage" placeholder="Write something thoughtful... I'll reply within 24h." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> send message</button>
+        </form>
+        <div id="formFeedback" style="margin-top: 1rem; font-size: 0.85rem; color: #9ce0e8;"></div>
+    </div>
+
+    <footer>&copy; 2026 Tegah Tiana</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
