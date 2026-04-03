@@ -1,0 +1,496 @@
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4f9da6;
+            --secondary-color: #b0b3b8;
+            --accent-color: #0a0a0a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #eaeef2;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* deep black gradient atmosphere */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 10%, #141414 0%, #000000 100%);
+            z-index: -2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ---------- KEBAB MENU ---------- */
+        .kebab-nav {
+            position: fixed;
+            top: 1.8rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .kebab-icon {
+            background: #1c1c1e;
+            backdrop-filter: blur(10px);
+            width: 48px;
+            height: 48px;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .kebab-icon span {
+            width: 22px;
+            height: 2px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .kebab-icon:hover {
+            background: #2a2a2e;
+            transform: scale(1.02);
+        }
+
+        .menu-dropdown {
+            position: absolute;
+            top: 58px;
+            right: 0;
+            background: rgba(18, 18, 20, 0.96);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            width: 210px;
+            padding: 0.8rem 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 35px -12px black;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-12px);
+            transition: 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            z-index: 1001;
+        }
+
+        .menu-dropdown a {
+            display: block;
+            padding: 0.75rem 1.6rem;
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .menu-dropdown a i {
+            width: 24px;
+            margin-right: 12px;
+            color: #aaa;
+        }
+
+        .menu-dropdown a:hover {
+            background: #2c2c30;
+            color: white;
+            padding-left: 2rem;
+        }
+
+        .kebab-nav.active .menu-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* profile header */
+        .profile-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            margin: 4rem 0 3rem 0;
+        }
+
+        .img-wrapper {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,240,0.2);
+            box-shadow: 0 30px 40px -15px rgba(0,0,0,0.8);
+            transition: transform 0.3s ease;
+            background: #1e1e1e;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        .intro-text {
+            flex: 2;
+        }
+
+        .intro-text h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF, #b0b3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #b0b3b8;
+            border-left: 3px solid #4f9da6;
+            padding-left: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* bio card */
+        .bio-card {
+            background: rgba(20, 20, 24, 0.65);
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .bio-card h2, .hobbies-section h2, .contact-section h2, .form-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.3px;
+            display: inline-block;
+            background: linear-gradient(120deg, #ddd, #fff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .bio-text {
+            font-size: 1.08rem;
+            line-height: 1.6;
+            color: #cfd4da;
+        }
+
+        /* hobbies list */
+        .hobbies-section {
+            margin: 2.5rem 0;
+        }
+
+        .hobby-list {
+            list-style:square;
+            display: flex;
+            /* flex-wrap: wrap; */
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .hobby-list li {
+            background: rgba(9, 9, 11, 0.7);
+            padding: 0.7rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 1rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.05);
+            /* transition: all 0.2s; */
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hobby-list li i {
+            color: #6dc7d1;
+            font-size: 1rem;
+        }
+
+        .hobby-list li:hover {
+            background: #2e2e36;
+            transform: translateY(-3px);
+            border-color: #4f9da6;
+        }
+
+        /* contact info cards + social grid */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .contact-details {
+            flex: 1;
+            background: rgba(12, 12, 16, 0.7);
+            border-radius: 1.8rem;
+            padding: 1.6rem;
+            border: 1px solid #2a2a2e;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #18181c;
+            padding: 0.8rem 1.2rem;
+            border-radius: 60px;
+            margin-bottom: 1rem;
+            transition: 0.2s;
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            color: #6dc7d1;
+            width: 28px;
+        }
+
+        /* social media massive row */
+        .social-links-section {
+            /* flex: 1; */
+            background: rgba(12, 12, 16, 0.7);
+            border-radius: 1.8rem;
+            padding: 1.6rem;
+            border: 1px solid #2a2a2e;
+        }
+
+        .social-links-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #ddd;
+        }
+
+        .social-icons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-icons-grid a{
+            background: #16181b;
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            font-size: 1.6rem;
+            color: #cbd5e6;
+            /* transition: all 0.2s ease; */
+            border: 1px solid #2e2e34;
+            text-decoration: none;
+        }
+
+        .social-icons-grid a i {
+            color: #ffffff;
+            font-size: 1.4rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* .social-icons-grid a:hover {
+            transform: translateY(-6px);
+            color: #7fcbd5;
+            border-color: #6dc7d1;
+            background: #24242a;
+        } */
+
+        .social-icons-grid .github :hover  {
+            color: #000000;
+        }
+
+        .social-icons-grid .linkedin :hover  {
+            color: #0053c6;
+        }
+
+        .social-icons-grid .discord :hover  {
+            color: #875bff;
+        }        
+        
+        .social-icons-grid .tiktok :hover  {
+            color: #000000;
+        }        
+        
+        .social-icons-grid .instagram :hover  {
+            color: #ff008c;
+        }        
+        
+        .social-icons-grid .xx :hover  {
+            color: #7ecbff;
+        }
+
+        .social-icons-grid .youtube :hover  {
+            color: #ff0000;
+        }
+
+        /* favorite link */
+        .fav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1f1f24;
+            padding: 0.7rem 1.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #eef2ff;
+            font-weight: 500;
+            margin: 1rem 0 0.5rem;
+            transition: all 0.25s;
+            border: 1px solid #2e2e34;
+        }
+
+        .fav-link:hover {
+            background: #2c4b55;
+            color: white;
+            border-color: #6dc7d1;
+            transform: translateX(6px);
+        }
+
+        /* ----- CONTACT FORM (email + message) ----- */
+        .form-section {
+            margin: 2.5rem 0 1rem;
+            background: rgba(8, 8, 12, 0.75);
+            border-radius: 2rem;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            color: #b9c2d1;
+        }
+
+        .form-group input, .form-group textarea {
+            background: #131318;
+            border: 1px solid #2a2a30;
+            padding: 0.9rem 1.2rem;
+            border-radius: 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+            transition: 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #6dc7d1;
+            box-shadow: 0 0 0 2px rgba(109,199,209,0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+            border-radius: 24px;
+        }
+
+        .submit-btn {
+            background: #2c5f6b;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 0.9rem 1.8rem;
+            border-radius: 60px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.2s;
+            width: fit-content;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #3f7e8c;
+            transform: scale(1.02);
+            gap: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2.5rem;
+            font-size: 0.8rem;
+            color: #5e5e66;
+            border-top: 1px solid #202024;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 800px) {
+            .contact-grid {
+                flex-direction: column;
+            }
+            .intro-text h1 {
+                font-size: 2.3rem;
+            }
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .tagline {
+                border-left: none;
+                padding-left: 0;
+                text-align: center;
+            }
+            .kebab-nav {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+         @media screen and (max-width: 768px) {
+            .hobby-list {
+            /* list-style:square; */
+            display: block;
+            /* flex-wrap: wrap; */
+            /* gap: 1rem; */
+            /* margin-top: 1rem; */
+            } 
+        }
